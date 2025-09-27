@@ -1,105 +1,92 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
+  /* State */
   const [MenuIsOpen, setMenuIsOpen] = useState(false);
 
+  /* Toggle menu */
   const toggleMenu = () => {
     console.log("Menu toggled");
     setMenuIsOpen(!MenuIsOpen);
   };
 
-  // Função para fechar o menu quando clicar em um link
+  /* Close menu */
   const closeMenu = () => {
     setMenuIsOpen(false);
   };
 
+  /* Navigation items */
+  const navItems = [
+    { href: "#home", label: "Início" },
+    { href: "#about", label: "Sobre" },
+    { href: "#skills", label: "Habilidades" },
+    { href: "#projects", label: "Projetos" },
+    { href: "#contact", label: "Contato" },
+  ];
+
   return (
     <>
+      {/* Header */}
       <header className="bg-gray-900/90 fixed top-0 left-0 w-full flex flex-col items-center justify-between px-6 py-4 z-50 backdrop-blur-xs border-b border-gray-800">
+        {/* Container */}
         <div className="flex items-center justify-between w-full lg:justify-around">
+          {/* Logo */}
           <h2 className="text-2xl font-bold bg-linear-135 from-emerald-500 to-sky-500 bg-clip-text text-transparent">
             Davy Andrade
           </h2>
 
-          <div className="hidden md:block">
-            <NavbarLinks onLinkClick={closeMenu} />
-          </div>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:block">
+            <ul className="flex gap-8">
+              {navItems.map((item) => (
+                <NavbarItem
+                  key={item.href}
+                  href={item.href}
+                  label={item.label}
+                />
+              ))}
+            </ul>
+          </nav>
 
+          {/* Mobile menu button */}
           <button onClick={toggleMenu} className="md:hidden">
             {MenuIsOpen ? <X /> : <Menu />}
           </button>
         </div>
 
-        <div
+        {/* Mobile Navigation */}
+        <nav
           className={`${
-            MenuIsOpen ? "flex" : "hidden"
+            MenuIsOpen ? "block" : "hidden"
           } pt-6 w-full md:hidden flex-col`}
         >
-          <NavbarLinks onLinkClick={closeMenu} />
-        </div>
+          <ul className="flex flex-col gap-6">
+            {navItems.map((item) => (
+              <NavbarItem
+                key={item.href}
+                href={item.href}
+                label={item.label}
+                onClick={closeMenu}
+              />
+            ))}
+          </ul>
+        </nav>
       </header>
     </>
   );
 }
 
-function NavbarLinks({ onLinkClick }) {
-  const handleLinkClick = () => {
-    // Chama a função para fechar o menu (apenas no mobile)
-    if (onLinkClick) {
-      onLinkClick();
-    }
-  };
-
+function NavbarItem({ href, label, onClick }) {
   return (
-    <nav>
-      <ul className="flex flex-col gap-6 md:flex-row md:gap-8">
-        <li>
-          <a
-            href="#home"
-            onClick={handleLinkClick}
-            className="hover:text-emerald-500 focus:text-emerald-500 transition-colors"
-          >
-            Início
-          </a>
-        </li>
-        <li>
-          <a
-            href="#about"
-            onClick={handleLinkClick}
-            className="hover:text-emerald-500 focus:text-emerald-500 transition-colors"
-          >
-            Sobre
-          </a>
-        </li>
-        <li>
-          <a
-            href="#skills"
-            onClick={handleLinkClick}
-            className="hover:text-emerald-500 focus:text-emerald-500 transition-colors"
-          >
-            Habilidades
-          </a>
-        </li>
-        <li>
-          <a
-            href="#projects"
-            onClick={handleLinkClick}
-            className="hover:text-emerald-500 focus:text-emerald-500 transition-colors"
-          >
-            Projetos
-          </a>
-        </li>
-        <li>
-          <a
-            href="#contact"
-            onClick={handleLinkClick}
-            className="hover:text-emerald-500 focus:text-emerald-500 transition-colors"
-          >
-            Contato
-          </a>
-        </li>
-      </ul>
-    </nav>
+    <li>
+      <a
+        href={href}
+        onClick={onClick}
+        className="hover:text-emerald-500 focus:text-emerald-500 transition-colors"
+      >
+        {label}
+      </a>
+    </li>
   );
 }
