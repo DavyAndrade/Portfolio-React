@@ -18,7 +18,7 @@ export default function Hero() {
         </span>
       </h1>
 
-      <p className="text-xl text-gray-300 text-center experiências digitais md:text-2xl max-w-xl">
+      <p className="text-xl text-gray-300 text-center experiências digitais md:text-2xl max-w-2xl">
         Desenvolvedor Front-end apaixonado por criar experiências digitais
         incríveis
       </p>
