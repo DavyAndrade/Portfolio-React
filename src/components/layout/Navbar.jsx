@@ -3,12 +3,12 @@ import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   /* State */
-  const [MenuIsOpen, setMenuIsOpen] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(false);
 
   /* Toggle menu */
   const toggleMenu = () => {
     console.log("Menu toggled");
-    setMenuIsOpen(!MenuIsOpen);
+    setMenuIsOpen(!menuIsOpen);
   };
 
   /* Close menu */
@@ -51,14 +51,14 @@ export default function Navbar() {
 
           {/* Mobile menu button */}
           <button onClick={toggleMenu} className="md:hidden">
-            {MenuIsOpen ? <X /> : <Menu />}
+            {menuIsOpen ? <X /> : <Menu />}
           </button>
         </div>
 
         {/* Mobile Navigation */}
         <nav
           className={`${
-            MenuIsOpen ? "block" : "hidden"
+            menuIsOpen ? "block" : "hidden"
           } pt-6 w-full md:hidden flex-col`}
         >
           <ul className="flex flex-col gap-6">
