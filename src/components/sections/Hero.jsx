@@ -23,7 +23,7 @@ export default function Hero() {
         incríveis
       </p>
 
-      <div className="flex w-full flex-col gap-4 md:flex-row md:justify-center">
+      <div className="flex w-full flex-col gap-4 sm:flex-row sm:justify-center">
         <button
           className="bg-emerald-500 text-white px-8 py-4 rounded-lg hover:bg-emerald-600 transition-colors font-medium focus:bg-emerald-600 cursor-pointer"
           onClick={() => {
