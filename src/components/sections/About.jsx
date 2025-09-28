@@ -6,6 +6,7 @@ export default function About() {
       className="bg-gray-900 min-h-screen py-20 px-6 flex flex-col items-center justify-center w-full gap-16 lg:px-42"
       id="about"
     >
+      {/* Título da Sessão */}
       <h2 className="text-4xl font-bold">
         Sobre{" "}
         <span className="bg-linear-135 from-emerald-500 to-sky-500 bg-clip-text text-transparent">
@@ -13,6 +14,7 @@ export default function About() {
         </span>
       </h2>
 
+      {/* Conteúdo da Sessão */}
       <div className="flex flex-col items-center justify-center gap-12 w-full md:grid md:grid-cols-2">
         {/* Column 1 */}
         <div className="flex items-center justify-center h-96 w-full bg-gradient-to-br from-emerald-500 to-sky-500 rounded-2xl">

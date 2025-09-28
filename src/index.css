@@ -13,3 +13,24 @@
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out;
 }
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes spin {
+  from {
+    translate: 0;
+  }
+  to {
+    translate: -100%;
+  }
+}
+
+.group {
+  animation: spin 45s linear infinite;
+}
+
+.carousel:hover .group {
+  animation-play-state: paused;
+}
