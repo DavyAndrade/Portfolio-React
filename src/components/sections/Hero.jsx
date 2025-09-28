@@ -3,7 +3,7 @@ import davy from "../../assets/davy.jpg";
 export default function Hero() {
   return (
     <section
-      className="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen pt-20 flex flex-col items-center justify-center gap-8 px-6 lg:px-78"
+      className="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen pt-20 flex flex-col items-center justify-center gap-8 px-6 lg:px-78 animate-fade-in-up"
       id="home"
     >
       <img
