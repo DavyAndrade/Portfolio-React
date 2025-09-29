@@ -37,26 +37,26 @@ export default function Skills() {
 
       <div className="flex flex-col items-center justify-center gap-12 w-full md:grid md:grid-cols-2">
         {/* Proficiência */}
-        <article className="flex flex-col justify-center gap-8">
+        <article className="flex flex-col justify-center gap-8 w-full">
           <h3 className="text-2xl font-semibold">Nível de Proficiência</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio
-            nobis quibusdam corporis pariatur accusantium, quaerat unde
-            veritatis culpa itaque esse omnis voluptate similique? Corporis
-            ipsa, assumenda voluptatum nisi quis itaque.
-          </p>
+
+          {/* Lista de Proficiência */}
+          <ProficiencyList />
         </article>
 
         {/* Especialização */}
-        <article className="flex flex-col justify-center gap-8">
+        <article className="flex flex-col justify-center gap-8 w-full">
           <h3 className="text-2xl font-semibold">Especialização</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ipsam debitis voluptatem et perferendis aut, consequuntur dolorum mollitia soluta molestiae culpa dolore nobis corporis veritatis neque nulla veniam blanditiis temporibus.</p>
+
+          {/* Lista de Especialização */}
+          <SpecializationList />
         </article>
       </div>
     </section>
   );
 }
 
+// Componente do Carrossel
 function Carousel() {
   return (
     <div className="carousel flex w-full overflow-x-auto">
@@ -66,6 +66,7 @@ function Carousel() {
   );
 }
 
+// Componente do Grupo de Habilidades
 function SkillsGroup() {
   const skills = [
     { name: "HTML5", icon: <BiLogoHtml5 /> },
@@ -83,21 +84,99 @@ function SkillsGroup() {
   ];
 
   return (
-    <div className="group flex items-center justify-center gap-8 px-4">
+    <div className="group flex items-center justify-center gap-12 px-6">
       {skills.map((skill) => (
-        <SkillItem key={skill.name} name={skill.name} icon={skill.icon} />
+        <SkillItem key={skill.name} icon={skill.icon} />
       ))}
     </div>
   );
 }
 
-function SkillItem({ name, icon }) {
+// Componente de Item de Habilidade
+function SkillItem({ icon }) {
   return (
-    <div
-      className={`bg-gray-700/10 h-32 w-32 p-4 flex flex-col items-center justify-center rounded-xl gap-2`}
-    >
-      <span className="text-6xl text-gray-400/50">{icon}</span>
-      <p className="text-gray-300/50 text-sm text-center">{name}</p>
+    <div className="p-4 flex flex-col items-center justify-center gap-2">
+      <span className="text-7xl text-white/25">{icon}</span>
+    </div>
+  );
+}
+
+// Componente da Lista de Proficiência
+function ProficiencyList() {
+  const proficiencies = [
+    { skill: "HTML5", level: "85%" },
+    { skill: "CSS3", level: "85%" },
+    { skill: "JavaScript", level: "80%" },
+    { skill: "React", level: "75%" },
+  ];
+
+  return (
+    <div className="flex flex-col gap-4 w-full">
+      {proficiencies.map((item) => (
+        <ProficiencyItem
+          key={item.skill}
+          skill={item.skill}
+          level={item.level}
+        />
+      ))}
+    </div>
+  );
+}
+
+// Componente de Item de Proficiência
+function ProficiencyItem({ skill, level }) {
+  return (
+    <div className="flex flex-col gap-2">
+      <ProficiencyInfo skill={skill} level={level} />
+      <ProgressBar level={level} />
+    </div>
+  );
+}
+
+// Componente de Informação de Proficiência
+function ProficiencyInfo({ skill, level }) {
+  return (
+    <div className="flex items-center w-full justify-between">
+      <p className="font-medium">{skill}</p>
+      <p className="text-emerald-500">{level}</p>
+    </div>
+  );
+}
+
+// Componente da Barra de Progresso
+function ProgressBar({ level }) {
+  return (
+    <div className="w-full bg-gray-700 rounded-full h-3">
+      <div
+        className="bg-gradient-to-r from-emerald-500 to-sky-500 h-3 rounded-full"
+        style={{ width: level }}
+      ></div>
+    </div>
+  );
+}
+
+function SpecializationList() {
+  const specializations = [
+    { icon: "🖥️", name: "Front-end" },
+    { icon: "🎨", name: "Design UI/UX" },
+    { icon: "📱", name: "Responsividade" },
+    { icon: "⚙️", name: "Versionamento" },
+  ];
+
+  return (
+    <div className="grid grid-cols-2 gap-4">
+      {specializations.map((item) => (
+        <SpecializationItem key={item.name} icon={item.icon} name={item.name} />
+      ))}
+    </div>
+  );
+}
+
+function SpecializationItem({ icon, name }) {
+  return (
+    <div className="flex flex-col items-center justify-center gap-2 p-4 bg-gray-700 rounded-lg hover:translate-y-[-4px] hover:shadow-xl transition-all delay-100">
+      <span className="text-4xl">{icon}</span>
+      <p className="font-medium text-center">{name}</p>
     </div>
   );
 }

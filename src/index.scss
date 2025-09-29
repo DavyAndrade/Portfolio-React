@@ -3,11 +3,13 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 .animate-fade-in-up {
   animation: fadeInUp 0.8s ease-out;
 }
@@ -16,19 +18,25 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(-100%);
   }
 }
+
 .carousel {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   scrollbar-width: none;
+
+  .group {
+    animation: spin 30s linear infinite;
+  }
+
+  &:hover .group {
+    animation-play-state: paused;
+  }
 }
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-.carousel .group {
-  animation: spin 45s linear infinite;
-}
-.carousel:hover .group {
-  animation-play-state: paused;
-}/*# sourceMappingURL=index.css.map */
+
