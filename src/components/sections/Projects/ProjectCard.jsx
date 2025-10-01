@@ -6,7 +6,7 @@ export default function ProjectCard({ project }) {
       <img
         src={project.image}
         alt={project.name}
-        className="w-full h-40 object-cover rounded-t-2xl"
+        className="w-full h-44 object-cover rounded-t-2xl"
       />
 
       <div className="flex flex-col p-6 justify-between gap-4 h-full">
