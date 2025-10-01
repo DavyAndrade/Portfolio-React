@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <>
       {/* Header */}
-      <header className="bg-gray-900/90 fixed top-0 left-0 w-full flex flex-col items-center justify-between px-6 py-4 z-50 backdrop-blur-xs border-b border-gray-800">
+      <header className="bg-gray-900/90 sticky top-0 left-0 w-full flex flex-col items-center justify-between px-6 py-4 z-50 backdrop-blur-xs border-b border-gray-800">
         {/* Container */}
         <div className="flex items-center justify-between w-full lg:justify-around">
           {/* Logo */}

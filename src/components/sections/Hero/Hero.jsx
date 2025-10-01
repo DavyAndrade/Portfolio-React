@@ -1,4 +1,6 @@
-import davy from "../../assets/davy.jpg";
+import davy from "../../../assets/davy.jpg";
+
+import Button from "../../ui/Button";
 
 export default function Hero() {
   return (
@@ -24,17 +26,22 @@ export default function Hero() {
       </p>
 
       <div className="flex w-full flex-col gap-4 sm:flex-row sm:justify-center">
-        <button
-          className="bg-emerald-500 text-white px-8 py-4 rounded-lg hover:bg-emerald-600 transition-colors font-medium focus:bg-emerald-600 cursor-pointer"
-          onClick={() => {
+        <Button
+          style={
+            "bg-emerald-500 text-white px-8 py-4 rounded-lg hover:bg-emerald-600 transition-colors font-medium focus:bg-emerald-600 cursor-pointer"
+          }
+          text={"Ver Projetos"}
+          action={() => {
             window.location.href = "#projects";
           }}
-        >
-          Ver Projetos
-        </button>
-        <button className="border border-sky-500 text-sky-500 px-8 py-4 rounded-lg hover:bg-sky-500 hover:text-white focus:bg-sky-500 focus:text-white transition-colors font-medium cursor-pointer">
-          Baixar CV
-        </button>
+        />
+        <Button
+          style={
+            "border border-sky-500 text-sky-500 px-8 py-4 rounded-lg hover:bg-sky-500 hover:text-white focus:bg-sky-500 focus:text-white transition-colors font-medium cursor-pointer"
+          }
+          text={"Baixar CV"}
+          action={() => {}}
+        />
       </div>
     </section>
   );

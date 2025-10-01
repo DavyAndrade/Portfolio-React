@@ -1,4 +1,5 @@
-import React from "react";
+import AboutText from "./AboutText.jsx";
+import AboutItem from "./AboutItem.jsx";
 
 export default function About() {
   return (
@@ -29,7 +30,7 @@ export default function About() {
           {/* Experience */}
           <div className="grid grid-cols-2 gap-4">
             <AboutItem
-              title="5+"
+              title="3+"
               subtitle="Projetos"
               color="text-emerald-500"
             />
@@ -38,18 +39,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  );
-}
-
-function AboutText({ text }) {
-  return <p className="text-lg text-gray-300 leading-relaxed">{text}</p>;
-}
-
-function AboutItem({ title, subtitle, color }) {
-  return (
-    <div className="flex flex-col items-center justify-center bg-gray-800 p-4 rounded-lg">
-      <p className={`text-3xl ${color} font-bold`}>{title}</p>
-      <p>{subtitle}</p>
-    </div>
   );
 }
