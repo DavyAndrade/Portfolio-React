@@ -12,7 +12,7 @@
   animation: fadeInUp 0.8s ease-out;
 }
 
-@keyframes spin {
+@keyframes carouselSlide {
   from {
     transform: translateX(0);
   }
@@ -27,7 +27,7 @@
   display: none;
 }
 .carousel .group {
-  animation: spin 45s linear infinite;
+  animation: carouselSlide 30s linear infinite;
 }
 .carousel:hover .group {
   animation-play-state: paused;

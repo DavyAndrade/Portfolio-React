@@ -14,7 +14,7 @@
   animation: fadeInUp 0.8s ease-out;
 }
 
-@keyframes spin {
+@keyframes carouselSlide {
   from {
     transform: translateX(0);
   }
@@ -32,7 +32,7 @@
   scrollbar-width: none;
 
   .group {
-    animation: spin 30s linear infinite;
+    animation: carouselSlide 30s linear infinite;
   }
 
   &:hover .group {
