@@ -30,7 +30,7 @@ export default function Navbar() {
       {/* Header */}
       <header className="bg-gray-900/90 sticky top-0 left-0 w-full flex flex-col items-center justify-between px-6 py-4 z-50 backdrop-blur-xs border-b border-gray-800">
         {/* Container */}
-        <div className="flex items-center justify-between w-full lg:justify-around">
+        <div className="flex items-center justify-between w-full xl:max-w-6xl mx-auto">
           {/* Logo */}
           <h2 className="text-2xl font-bold bg-linear-135 from-emerald-500 to-sky-500 bg-clip-text text-transparent cursor-pointer">
             <a href="#home">Davy Andrade</a>
