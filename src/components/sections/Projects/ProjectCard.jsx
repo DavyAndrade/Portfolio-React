@@ -2,7 +2,7 @@ import Button from "../../ui/Button";
 
 export default function ProjectCard({ project }) {
   return (
-    <article className="bg-gray-800 rounded-2xl hover:translate-y-[-4px] hover:shadow-xl transition-all duration-300 flex flex-col w-full border border-gray-700">
+    <article className="bg-gray-800 rounded-2xl hover:translate-y-[-4px] hover:shadow-xl focus:translate-y-[-4px] focus:shadow-xl transition-all duration-300 flex flex-col w-full border border-gray-700" tabIndex={0}>
       <img
         src={project.image}
         alt={project.name}
