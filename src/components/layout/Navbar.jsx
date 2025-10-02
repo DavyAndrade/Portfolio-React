@@ -32,8 +32,8 @@ export default function Navbar() {
         {/* Container */}
         <div className="flex items-center justify-between w-full lg:justify-around">
           {/* Logo */}
-          <h2 className="text-2xl font-bold bg-linear-135 from-emerald-500 to-sky-500 bg-clip-text text-transparent">
-            Davy Andrade
+          <h2 className="text-2xl font-bold bg-linear-135 from-emerald-500 to-sky-500 bg-clip-text text-transparent cursor-pointer">
+            <a href="#home">Davy Andrade</a>
           </h2>
 
           {/* Desktop Navigation */}
