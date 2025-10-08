@@ -24,7 +24,6 @@ export default function Footer() {
             <a
               href="https://github.com/DavyAndrade"
               target="_blank"
-              rel="noopener noreferrer"
               className="text-2xl p-2 rounded-full text-black hover:text-gray-300 transition-colors"
             >
               <FaGithub />
@@ -32,9 +31,7 @@ export default function Footer() {
           </li>
           <li className="bg-gradient-to-r from-emerald-500 to-sky-500 w-10 h-10 rounded-full flex items-center justify-center hover:opacity-80 transition-colors">
             <a
-              href="https://twitter.com/davy_andrade"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="https://x.com/davyandrade_dev"
               className="text-2xl p-2 rounded-full text-black hover:text-gray-300 transition-colors"
             >
               <FaXTwitter />

@@ -8,7 +8,7 @@ export default function Hero() {
       className="bg-gradient-to-br from-gray-900 to-gray-800 min-h-screen py-20 flex flex-col items-center justify-center px-6 animate-fade-in-up"
       id="home"
     >
-      <div className="flex flex-col items-center justify-center gap-8 w-full max-w-6xl mx-auto">
+      <div className="flex flex-col items-center justify-center gap-8 w-full max-w-6xl mx-auto h-full">
         <img
           src={davy}
           alt="Davy Andrade"
