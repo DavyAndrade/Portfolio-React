@@ -3,6 +3,7 @@ import TaskFlowImg from "../../../assets/taskflow.png";
 import LocalizaCEPImg from "../../../assets/localizacep.png";
 import BentoGridImg from "../../../assets/bentogrid.png";
 import SocialLinkProfileImg from "../../../assets/social-links.png";
+import ReciclaTechImg from "../../../assets/reciclatech.png";
 
 const projects = [
   {
@@ -31,6 +32,15 @@ const projects = [
     repo: "https://github.com/DavyAndrade/LocalizaCEP",
     tags: ["HTML", "CSS", "JavaScript", "API"],
     image: LocalizaCEPImg,
+  },
+  {
+    name: "ReciclaTech",
+    description:
+      "Projeto fictício de um site para uma empresa de reciclagem de eletrônicos.",
+    demo: "https://davyandrade.github.io/ReciclaTech/",
+    repo: "https://github.com/DavyAndrade/ReciclaTech",
+    tags: ["HTML", "CSS", "SCSS", "Responsividade"],
+    image: ReciclaTechImg,
   },
   {
     name: "Bento Grid",

@@ -1,6 +1,7 @@
 import davy from "../../../assets/davy.jpg";
-
 import Button from "../../ui/Button";
+import { FaGithub } from "react-icons/fa";
+import { HiOutlineFolder } from "react-icons/hi";
 
 export default function Hero() {
   return (
@@ -26,22 +27,26 @@ export default function Hero() {
           incríveis
         </p>
 
-        <div className="flex w-full flex-col gap-4 sm:flex-row sm:justify-center">
+        <div className="flex w-full flex-col mt-2 gap-4 sm:flex-row sm:justify-center">
           <Button
             style={
-              "bg-emerald-500 text-white px-8 py-4 rounded-lg hover:bg-emerald-600 transition-colors font-medium focus:bg-emerald-600 cursor-pointer"
+              "flex justify-center items-center bg-emerald-500 text-white px-8 py-4 gap-2 rounded-lg text-lg hover:bg-emerald-600 transition-colors font-medium focus:bg-emerald-600 cursor-pointer"
             }
             text={"Ver Projetos"}
             action={() => {
-              window.location.href = "#projects";
+              document.getElementById("projects").scrollIntoView();
             }}
+            icon={<HiOutlineFolder />}
           />
           <Button
             style={
-              "border border-sky-500 text-sky-500 px-8 py-4 rounded-lg hover:bg-sky-500 hover:text-white focus:bg-sky-500 focus:text-white transition-colors font-medium cursor-pointer"
+              "flex justify-center items-center border border-sky-500 text-sky-500 px-8 py-4 gap-2 text-lg rounded-lg hover:bg-sky-500 hover:text-white focus:bg-sky-500 focus:text-white transition-colors font-medium cursor-pointer"
             }
-            text={"Baixar CV"}
-            action={() => {}}
+            text={"Ver GitHub"}
+            action={() => {
+              window.open("https://github.com/DavyAndrade", "_blank");
+            }}
+            icon={<FaGithub />}
           />
         </div>
       </div>
